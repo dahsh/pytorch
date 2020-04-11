@@ -35,10 +35,7 @@ struct InputBuffer {
 
 
   Variable operator[](size_t pos) { return buffer[pos]; }
-
-  std::vector<Variable>& inputVariables() & {
-    return buffer;
-  }
+  Variable& operator[](size_t pos) & { return buffer[pos]; }
 
   // Returns the inputs as a list of variables. Destroys given InputBuffer.
   static std::vector<Variable> variables(InputBuffer&& g);
